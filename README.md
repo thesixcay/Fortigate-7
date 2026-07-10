@@ -34,20 +34,8 @@ Configurar un firewall FortiGate completamente desde la interfaz gráfica para i
 ## 🗺️ Topología de la red
 
 ```
-                    [ Internet ]
-                         │
-                       port1 (WAN)
-                    ┌─────────────┐
-                    │  FortiGate  │
-                    └─────────────┘
-                     port2   port3
-                       │       │
-                     ┌───┐   ┌───┐
-                     │sw2│   │sw3│
-                     └───┘   └───┘
-                       │       │
-                    [Win 7]  [Winserver]
-                  LAN_USUARIOS  LAN_SERVIDORES
+<img width="975" height="767" alt="image" src="https://github.com/user-attachments/assets/2658149f-8030-4984-8add-fd9cbc6bab98" />
+
 ```
 
 | Dispositivo   | Interfaz | Rol             |
