@@ -1,5 +1,6 @@
 # Laboratorio FortiGate 7 – Configuración GUI en PNETLab
 
+
 ---
 
 ## 📖 Introducción
@@ -33,8 +34,21 @@ Configurar un firewall FortiGate completamente desde la interfaz gráfica para i
 
 ## 🗺️ Topología de la red
 
-
-
+```
+                    [ Internet ]
+                         │
+                       port1 (WAN)
+                    ┌─────────────┐
+                    │  FortiGate  │
+                    └─────────────┘
+                     port2   port3
+                       │       │
+                     ┌───┐   ┌───┐
+                     │sw2│   │sw3│
+                     └───┘   └───┘
+                       │       │
+                    [Win 7]  [Winserver]
+                  LAN_USUARIOS  LAN_SERVIDORES
 ```
 
 | Dispositivo   | Interfaz | Rol             |
@@ -127,6 +141,10 @@ Se habilitó el perfil **Web Application Firewall** (`WAF_WEB`) junto con inspec
 - Acceso exitoso a Internet desde Win 7 (ej. Wikipedia)
 - Acceso HTTP exitoso desde el cliente hacia el servidor IIS (`23.6.1.130`)
 - Confirmación del bloqueo de tráfico no autorizado (pruebas de ping fallidas hacia el servidor cuando corresponde)
+
+---
+
+
 
 ---
 
