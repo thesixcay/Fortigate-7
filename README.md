@@ -35,7 +35,7 @@ Configurar un firewall FortiGate completamente desde la interfaz gráfica para i
 ## 🗺️ Topología de la red
 
 ```
-![image alt](https://github.com/thesixcay/Fortigate-7/blob/671e90907615a82851b1931821a26ef02d680b2a/screenshots/Screenshot%202026-07-10%20161641.png)
+
 ```
 
 | Dispositivo   | Interfaz | Rol             |
