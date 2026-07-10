@@ -35,6 +35,7 @@ Configurar un firewall FortiGate completamente desde la interfaz gráfica para i
 ## 🗺️ Topología de la red
 
 ```
+<img width="674" height="701" alt="Screenshot 2026-07-10 161641" src="https://github.com/user-attachments/assets/4d25ada1-ef4b-4178-9b45-f8d07b9370c5" />
 
 ```
 
