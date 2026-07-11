@@ -34,9 +34,9 @@ Configurar un firewall FortiGate completamente desde la interfaz gráfica para i
 
 ## 🗺️ Topología de la red
 
-```
 
-```
+<img src="screenshots/Screenshot2026-07-1061641.png" width="400" alt="Texto">
+
 
 | Dispositivo   | Interfaz | Rol             |
 |---------------|----------|-----------------|
@@ -51,6 +51,8 @@ Configurar un firewall FortiGate completamente desde la interfaz gráfica para i
 ---
 
 ## ⚙️ Configuración de interfaces
+
+<img src="screenshots/Screenshot 2026-07-10 161814.png" width="800" alt="Texto">
 
 Se configuraron las interfaces del FortiGate para separar la red de usuarios, la red de servidores y la conexión hacia Internet.
 
@@ -70,12 +72,16 @@ Se configuraron las interfaces del FortiGate para separar la red de usuarios, la
 ---
 
 ## 🌐 Acceso a Internet
+<img src="screenshots/Screenshot 2026-07-10 162339.png" width="800" alt="Texto">
 
 La interfaz WAN (port1) fue configurada en modo DHCP, obteniendo conectividad hacia Internet, verificada mediante acceso a sitios externos desde la máquina cliente (Win 7).
 
 ---
 
 ## 🔒 Políticas de firewall
+<img src="screenshots/Screenshot 2026-07-10 162709.png" width="800" alt="Texto">
+
+<img src="screenshots/Screenshot 2026-07-10 162735.png" width="800" alt="Texto">
 
 ### Tráfico HTTP permitido (usuarios → servidores)
 - **Nombre:** `HTTP_to_Server`
@@ -84,6 +90,8 @@ La interfaz WAN (port1) fue configurada en modo DHCP, obteniendo conectividad ha
 - **Servicio:** HTTP
 - **Acción:** ACCEPT
 - **Perfiles de seguridad:** WAF_WEB, certificate-inspection
+
+<img src="screenshots/Screenshot 2026-07-10 153917.png" width="800" alt="Texto">
 
 ### Bloqueo del resto del tráfico
 - **Nombre:** `Block_to_Server`
@@ -95,6 +103,8 @@ La interfaz WAN (port1) fue configurada en modo DHCP, obteniendo conectividad ha
 ---
 
 ## 🚫 Bloqueo de redes sociales y aplicaciones
+
+<img src="screenshots/Screenshot 2026-07-10 162944.png" width="800" alt="Texto">
 
 Se configuró un **Application Control Sensor** (`APP_CONTROL`) para bloquear categorías como:
 - Social Media
@@ -108,6 +118,8 @@ Esto incluye el bloqueo de llamadas por WhatsApp mediante el control de aplicaci
 
 ## 🌍 Bloqueo de dominios (itla.edu.do)
 
+<img src="screenshots/Screenshot 2026-07-10 163044.png" width="800" alt="Texto">
+
 Se creó un **Web Filter Profile** (`WEB_FILTER`) con un filtro de URL estático:
 
 | URL           | Tipo      | Acción | Estado   |
@@ -119,6 +131,8 @@ Se creó un **Web Filter Profile** (`WEB_FILTER`) con un filtro de URL estático
 
 ## 🛡️ WAF en el servidor Web
 
+<img src="screenshots/Screenshot 2026-07-10 163213.png" width="800" alt="Texto">
+
 Se habilitó el perfil **Web Application Firewall** (`WAF_WEB`) junto con inspección SSL (`certificate-inspection`) en la política `HTTP_to_Server`, protegiendo el servidor IIS de la LAN de servidores.
 
 ---
@@ -126,9 +140,16 @@ Se habilitó el perfil **Web Application Firewall** (`WAF_WEB`) junto con inspec
 ## ✅ Verificación
 
 - Acceso exitoso a Internet desde Win 7 (ej. Wikipedia)
+
+<img src="screenshots/Screenshot 2026-07-10 162339.png" width="800" alt="Texto">
+  
 - Acceso HTTP exitoso desde el cliente hacia el servidor IIS (`23.6.1.130`)
+  
+  <img src="screenshots/Screenshot 2026-07-10 163810.png" width="800" alt="Texto">
+  
 - Confirmación del bloqueo de tráfico no autorizado (pruebas de ping fallidas hacia el servidor cuando corresponde)
 
+<img src="screenshots/Screenshot 2026-07-10 163315.png" width="800" alt="Texto">
 ---
 
 
